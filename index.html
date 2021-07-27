@@ -8,42 +8,27 @@
 		</title>
 	</head>
 <body>
-	<header class = "menu-dos-otarios">
-		<main>
-		<div class= 'header-1'>
-			<div class = "logo-dos-otarios">
-				<img src="./img/imagemdosotarios.png"/>
-			 </div>
-		</div>
-		</main>
-	</header>
-	<header class = 'botao'>
-		<main>
+	<div class = 'botao'>
 			<div class = 'botao-1'>
-				<button	type = "button" id = 'botao1'	class = "thalesbutton" >Começar
-				</button>
+				<button	type = "button" id = 'botao1'	class = "thalesbutton" >Start</button>
 			</div>
 			<div class = 'botao-2'>
-				<button	type = "button"	id = 'botao2'class = "thalesbutton">Parar</button>
+				<button	type = "button"	id = 'botao2'class = "thalesbutton">Stop</button>
 			</div>
 			<div class = 'botao-3'>
-				<button type = 'button' id = 'botao3'class= 'thalesbutton'>Reiniciar</button>
+				<button type = 'button' id = 'botao3'class= 'thalesbutton'>Clear</button>
 			</div>
-		</main>
-	</header>
-	<header class = 'input-field'>
-		<main>
+	</div>
+	<div class = 'input-field'>
 			<div class = 'form'>
 				<form action='startchrono' method='get' name = 'form-1'> 
 					<div class = 'input-field-1'>
-						<input id = 'input' type="text" name="chrono-input">
+						<input class = 'input-01' placeholder="hour:minute:second" id = 'input' type="text" name="chrono-input">
 					</div>
 				</form>
 			</div>
-		</main>
-	</header>
-	<header class= 'display-cronometro'>
-		<main>
+	</div>
+	<div class= 'display-cronometro'>
 			<div class = 'cronometro-1'>
 				<span id = 'timer' class = 'timer-1'>00:00:00
 				</span>
@@ -146,7 +131,6 @@
 					}
 		</script>
 			</div>
-		</main>
-	</header>	
+	</div>	
 </body>
 </html>

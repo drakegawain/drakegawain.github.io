@@ -49,6 +49,7 @@
 					// ou se o usuario pediu para parar o cronometro
 					var is_stop = false;
 					var is_blank = false;
+					const timer_real_zero = 0;
 					// declara as funcoes que reiniciam, param e começam
 					// o cronometro
 					 function restartchrono(){
@@ -56,7 +57,7 @@
 					 	if (timer === ''){
 							document.location.reload(true);
 						}
-						if (is_stop == true){
+						if (is_stop === true){
 							document.location.reload(true);
 						}
 					 	return is_blank = true;
@@ -97,14 +98,39 @@
 								clearInterval(interval);
 								document.location.reload(true);
 							}
+							if (timer_funct.seconds === 0 && timer_funct.minutes == 0 && timer_funct.hours == 0){
+								alert("Time's up");
+								clearInterval(interval);
+								document.location.reload(true);
+							}
 							// logica do cronometro
 							timer_funct.seconds--;
-							if(timer_funct.seconds == 0){
-								timer_funct.minutes--;
-								timer_funct.seconds = 60;
-								if (timer_funct.minutes == 0) {
-									timer_funct.hours--;
-									timer_funct.minutes = 59;
+							if (timer_funct.seconds < 0) {
+									timer_funct.seconds = 59;
+								}
+							if(timer_funct.seconds === 0){
+								function statictimer () {
+									timer_funct.minutes--;
+									if (timer_funct.minutes < 0){
+										return timer_funct.minutes = 0;
+									}
+									else {
+										return timer_funct.minutes;
+									}
+								}
+								statictimer();
+								timer_funct.seconds = 0;
+								if (timer_funct.minutes === 0) {
+									function statictimer_hours(){
+										timer_funct.hours--;
+										if (timer_funct.hours < 0){
+											return timer_funct.hours = 0, timer_funct.minutes = 0;
+										}
+										else {
+											timer_funct.minutes = 59;
+										}
+									}
+									statictimer_hours();
 								}
 							}
 							// formata o cronometro
@@ -123,9 +149,11 @@
 							else {
 								display_cronometro.innerHTML =  + timer_funct.hours + ':' + + timer_funct.minutes + ':' + timer_funct.seconds;
 							}
-							if (is_stop == true){
+							//para o cronometro
+							if (is_stop === true){
 								clearInterval(interval);
 							}
+							
 						}, 1000);
 						
 					}

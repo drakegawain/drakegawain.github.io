@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 		<script type="text/javascript" src = './js/jquery-3.6.0.js'></script>
@@ -51,7 +50,6 @@
 					var is_blank = false;
 					const timer_real_zero = 0;
 					var faststarter_variable = false;
-					var total_seconds = 0;
 					// declara as funcoes que reiniciam, param e começam
 					// o cronometro
 					 function restartchrono(){
@@ -93,7 +91,6 @@
 							alert('Insira o valor do tipo HH:MM:SS');
 							is_blank = true;
 						}
-						total_seconds = (timer_funct.hours * 3600) + (timer_funct.minutes * 60) + timer_funct.seconds;
 						var interval = setInterval(function(){
 							// se is_blank for true, para o cronometro
 							// e recarrega a pagina
@@ -103,18 +100,85 @@
 							}
 							
 							// logica do cronometro
-							console.log(total_seconds);
-							total_seconds--;
-							timer_funct.hours = Math.trunc(total_seconds / 3600);
-							timer_funct.minutes = Math.trunc(total_seconds / 60);
-							timer_funct.seconds = total_seconds % 60;
-							if (timer_funct.minutes > 60) {
-								timer_funct.minutes = timer_funct.minutes % 60;
-								}
-							if (timer_funct.minutes % 60 == 0){
-							timer_funct.minutes = 0;
+							if (timer_funct.seconds === 0 && timer_funct.minutes === 0 && timer_funct.hours === 0){
+								alert("Time's up");
+								clearInterval(interval);
+								document.location.reload(true);
 							}
+							function faststarter(){
+								if (timer_funct.seconds != 0 && timer_funct.minutes != 0 && timer_funct.hours != 1){
+									return faststarter_variable = true;
+								}
+								if (timer_funct.hours === 1 && timer_funct.seconds != 0 && timer_funct.minutes != 0){
+									return faststarter_variable = true;
+								}
+								if (timer_funct.hours === 0 && timer_funct.seconds !=0 && timer_funct.minutes === 0){
+									return faststarter_variable = true;
+								}
+								if (timer_funct.hours >= 0 && timer_funct.minutes != 0 && timer_funct.seconds >=0){
+									return faststarter_variable = true;
+								}
+								if (timer_funct.hours >=0 && timer_funct.seconds > 0 &&  timer_funct.minutes == 0){
+									return faststarter_variable = true;
+								}
+							}
+							faststarter();
+							if (faststarter_variable == true){
+								timer_funct.seconds--;
+							}
+							if (timer_funct.seconds < 0) {
+									timer_funct.seconds = 59;
+								}
+							if (timer_funct.minutes < 0){
+									timer_funct.minutes = 59;
+							}
+							if (timer_funct.hours < 0){
+								timer_funct.hours = 59;
+							}
+							
+							if (timer_funct.seconds === 59){
+								timer_funct.minutes--;
+							}
+							if(timer_funct.seconds === 0){
+								function statictimer () {
+									if (timer_funct.minutes <= 0){
+										return timer_funct.minutes = 0;
+									}
+									else {
+										return timer_funct.minutes;
+									}
+								}
 
+								statictimer();
+								if (timer_funct.minutes === 0) {
+									function statictimer_hours(){
+										timer_funct.hours--;
+										if (timer_funct.hours < 0){
+											console.log('statictimer_hours pass 1')
+											return timer_funct.hours = 0, timer_funct.minutes = 0;
+										}
+										else if (timer_funct.hours == 0){
+											console.log('statictimer_hours pass 2')
+											timer_funct.hours ++, timer_funct.minutes = 0
+											return  statictimer_hours();
+										}
+										else{ 
+											console.log('statictimer_hours pass 3')
+											timer_funct.minutes = 59;
+										}
+									}
+									statictimer_hours();
+								}
+								function throw_seconds_59_or_0(){
+									if (timer_funct.hours >= 0 && timer_funct.minutes === 59){
+										console.log('throw_seconds_59_or_0: pass');
+										return timer_funct.seconds = 59;
+									}
+									else
+										return timer_funct.seconds = 0;
+								}
+								throw_seconds_59_or_0();
+							}
 							// formata o cronometro
 							if (timer_funct.hours < 10 && timer_funct.minutes < 10 && timer_funct.seconds < 10){
 								display_cronometro.innerHTML = '0' + timer_funct.hours+ ':' + '0' + timer_funct.minutes + ':' + '0' + timer_funct.seconds;
@@ -137,6 +201,10 @@
 							//para o cronometro
 							if (is_stop === true){
 								clearInterval(interval);
+							}
+							if (faststarter_variable == false){
+								console.log('faststarter_variable:false')
+								timer_funct.seconds--;
 							}
 						}, 1000);
 						

@@ -101,7 +101,11 @@
 								clearInterval(interval);
 								document.location.reload(true);
 							}
-							
+							if (total_seconds === 0){
+								alert("Time's up");
+								clearInterval(interval);
+								document.location.reload(true);
+							}
 							// logica do cronometro
 							console.log(total_seconds);
 							total_seconds--;

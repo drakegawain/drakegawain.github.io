@@ -94,3 +94,16 @@ body {
      box-shadow: 0px 0px 5px rgba(66,66,66,.75);
      text-shadow: 0px 0px 5px rgba(66,66,66,.75);
 }
+.textbox{
+	color: #bebebe;
+	position : absolute;
+	top: 70%;
+	left: 72%;
+}
+.textboxint{
+	text-align: justify;
+	position : relative;
+	border: hidden;
+	border-radius: 2px;
+	width: 95%;
+}

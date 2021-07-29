@@ -5,13 +5,19 @@
 		<script type="text/javascript" src = './js/jquery-3.6.0.js'></script>
 		<link rel='stylesheet' type='text/css' href='./css/main.css'>
 		<title>
-			Cronômetro Online
+			Stopwatch/Cronometro Online
 		</title>
 	</head>
 <body>
+	<div class = 'textbox' id = 'infobox' style = 'display: block'>
+		<script type="text/javascript" src="./js/showtext.js"></script>
+		<span type = 'button' id ='info-box'>About time</span>
+		<p class = 'textboxint' id = 'infobox1'></p>
+		<p class= 'textboxint' id = 'infobox2'></p>
+	</div>
 	<div class = 'botao'>
 			<div class = 'botao-1'>
-				<button	type = "button" id = 'botao1'	class = "thalesbutton" >Start</button>
+				<button	type = "button" id = 'botao1'	class = "thalesbutton">Start</button>
 			</div>
 			<div class = 'botao-2'>
 				<button	type = "button"	id = 'botao2'class = "thalesbutton">Stop</button>
@@ -35,117 +41,7 @@
 				</span>
 			</div>
 			<div class = 'script-cronometro'>
-				<script type="text/javascript">
-					// confere o click ao botao 
-					// e chama as funcoes que iniciam, param e reiniciam
-					// o cronometro
-					document.getElementById('botao1').addEventListener('click', () => {startchrono()}, true);
-					document.getElementById('botao2').addEventListener('click', () => {
-						stopchrono()
-					}, true);
-					document.getElementById('botao3').addEventListener('click', () => {
-						restartchrono()
-					}, true);
-					// declara as variaveis que checam se o input esta em branco
-					// ou se o usuario pediu para parar o cronometro
-					var is_stop = false;
-					var is_blank = false;
-					const timer_real_zero = 0;
-					var faststarter_variable = false;
-					var total_seconds = 0;
-					// declara as funcoes que reiniciam, param e começam
-					// o cronometro
-					 function restartchrono(){
-					 	let timer = document.getElementById('input').value;
-					 	if (timer === ''){
-							document.location.reload(true);
-						}
-						if (is_stop === true){
-							document.location.reload(true);
-						}
-					 	return is_blank = true;
-					 }
-					 function stopchrono (){
-					 	is_stop = true;	
-						return  is_stop;
-					}
-					function startchrono(){
-						// pega o valor do input
-						let timer = document.getElementById('input').value;
-						// seleciona o display do cronometro
-					    let display_cronometro = document.getElementById('timer');
-						var timer_funct = {
-							seconds : 0,
-							minutes : 0,
-							hours : 0,
-						};
-						// transforma o valor do input em um numero
-						// correspondente a uma posicao da string
-						// com o metodo substring
-						timer_funct.hours = parseInt(timer.substring(0,2), 10);
-						timer_funct.minutes = parseInt(timer.substring(3,5), 10);
-						timer_funct.seconds = parseInt(timer.substring(6,8), 10);
-						// define o conteudo de display_cronometro
-						// como o input do usuario
-						display_cronometro.innerHTML = timer;
-						// condiciona o input do usuario a nao ser em branco
-						// se for, a variavel is_blank recebe true
-						if (timer === ''){
-							alert('Insira o valor do tipo HH:MM:SS');
-							is_blank = true;
-						}
-						total_seconds = (timer_funct.hours * 3600) + (timer_funct.minutes * 60) + timer_funct.seconds;
-						var interval = setInterval(function(){
-							// se is_blank for true, para o cronometro
-							// e recarrega a pagina
-							if (is_blank === true){
-								clearInterval(interval);
-								document.location.reload(true);
-							}
-							if (total_seconds === 0){
-								alert("Time's up");
-								clearInterval(interval);
-								document.location.reload(true);
-							}
-							// logica do cronometro
-							console.log(total_seconds);
-							total_seconds--;
-							timer_funct.hours = Math.trunc(total_seconds / 3600);
-							timer_funct.minutes = Math.trunc(total_seconds / 60);
-							timer_funct.seconds = total_seconds % 60;
-							if (timer_funct.minutes > 60) {
-								timer_funct.minutes = timer_funct.minutes % 60;
-								}
-							if (timer_funct.minutes % 60 == 0){
-							timer_funct.minutes = 0;
-							}
-
-							// formata o cronometro
-							if (timer_funct.hours < 10 && timer_funct.minutes < 10 && timer_funct.seconds < 10){
-								display_cronometro.innerHTML = '0' + timer_funct.hours+ ':' + '0' + timer_funct.minutes + ':' + '0' + timer_funct.seconds;
-							}
-							else if (timer_funct.hours < 10 && timer_funct.minutes < 10){
-								display_cronometro.innerHTML = '0' + timer_funct.hours + ':' + '0'+ timer_funct.minutes + ':' + timer_funct.seconds;
-							}
-							else if (timer_funct.hours < 10 && timer_funct.seconds < 10){
-								display_cronometro.innerHTML = '0' + timer_funct.hours + ':' + timer_funct.minutes + ':' + '0' + timer_funct.seconds;
-							}
-							else if (timer_funct.minutes < 10 && timer_funct.seconds< 10){
-								display_cronometro.innerHTML =   timer_funct.hours + ':' + '0'+ timer_funct.minutes + ':' + '0' + timer_funct.seconds;
-							}
-							else if (timer_funct.hours < 10){
-								display_cronometro.innerHTML =  '0'+ timer_funct.hours + ':' +  timer_funct.minutes + ':' + timer_funct.seconds;
-							}
-							else {
-								display_cronometro.innerHTML =   timer_funct.hours + ':' +  timer_funct.minutes + ':' + timer_funct.seconds;
-							}
-							//para o cronometro
-							if (is_stop === true){
-								clearInterval(interval);
-							}
-						}, 1000);
-						
-					}
+				<script type="text/javascript" src = './js/chrono.js'>		
 		</script>
 			</div>
 	</div>	

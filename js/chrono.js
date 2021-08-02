@@ -41,12 +41,80 @@
 							minutes : 0,
 							hours : 0,
 						};
+						const define_input = {
+							tamanho : timer.length,
+							boolean : false,
+							ajuste : 0,
+						}
 						// transforma o valor do input em um numero
 						// correspondente a uma posicao da string
 						// com o metodo substring
+						//minimo: 5 maximo 8
+						try{
 						timer_funct.hours = parseInt(timer.substring(0,2), 10);
 						timer_funct.minutes = parseInt(timer.substring(3,5), 10);
 						timer_funct.seconds = parseInt(timer.substring(6,8), 10);
+							if (define_input.tamanho != 8) {
+								if (define_input.tamanho == 5){
+									timer_funct.hours = parseInt(timer.substring(0,1), 10);
+									timer_funct.minutes = parseInt(timer.substring(2,3), 10);
+									timer_funct.seconds = parseInt( timer.substring(4,5), 10);
+								}
+								if (define_input.tamanho == 6){
+									console.log(timer_funct);
+									if(isNaN(timer_funct.minutes)){
+										console.log('pass1')
+										timer_funct.hours = parseInt(timer.substring(0,1), 10);
+										timer_funct.minutes = parseInt(timer.substring(2,4), 10);
+										timer_funct.seconds = parseInt( timer.substring(5,6), 10);
+									}
+									if (isNaN(timer_funct.seconds)) {
+										console.log('pass2')
+										console.log(timer_funct.seconds);
+										while (timer[define_input.ajuste] != ':'){
+											define_input.ajuste++
+										}
+										console.log(define_input.ajuste);
+										if (define_input.ajuste == 2){
+											define_input.boolean = true;
+										}
+										timer_funct.hours = parseInt(timer.substring(0,1), 10);
+										timer_funct.minutes = parseInt(timer.substring(2,4), 10);
+										timer_funct.seconds = parseInt( timer.substring(5,6), 10);
+										console.log(timer_funct);
+										if (define_input.boolean == true) {
+											console.log('pass3')
+											timer_funct.hours = parseInt(timer.substring(0,2), 10);
+											timer_funct.minutes = parseInt(timer.substring(3,4), 10);
+											timer_funct.seconds = parseInt(timer.substring(5,6), 10);
+										}
+									}
+									
+								}
+								if (define_input.tamanho == 7) {
+									if (isNaN(timer_funct.minutes) && isNaN(timer_funct.seconds)){
+										timer_funct.hours = parseInt(timer.substring(0,1), 10);
+										timer_funct.minutes = parseInt(timer.substring(2,4), 10);
+										timer_funct.seconds = parseInt( timer.substring(5,7), 10);
+									}
+									if (isNaN(timer_funct.minutes) || isNaN(timer_funct.seconds)) {
+										if (isNaN(timer_funct.minutes)){
+											timer_funct.hours = parseInt(timer.substring(0,2), 10);
+											timer_funct.minutes = parseInt(timer.substring(3,4), 10);
+											timer_funct.seconds = parseInt( timer.substring(5,7), 10);
+										}
+										if (isNaN(timer_funct.seconds)) {
+											timer_funct.hours = parseInt(timer.substring(0,2), 10);
+											timer_funct.minutes = parseInt(timer.substring(3,5), 10);
+											timer_funct.seconds = parseInt( timer.substring(6,7), 10);
+										}
+									}
+								}
+							}
+					}
+					catch(e){
+						console.log(e);
+					}
 						// define o conteudo de display_cronometro
 						// como o input do usuario
 						display_cronometro.innerHTML = timer;
@@ -70,7 +138,6 @@
 								document.location.reload(true);
 							}
 							// logica do cronometro
-							console.log(total_seconds);
 							total_seconds--;
 							timer_funct.hours = Math.trunc(total_seconds / 3600);
 							timer_funct.minutes = Math.trunc(total_seconds / 60);

@@ -107,3 +107,12 @@ body {
 	border-radius: 2px;
 	width: 95%;
 }
+.content{
+	width: 40%;
+	text-align: justify;
+	color: #bebebe;
+	position: absolute;
+	left: 5%;
+	top: 100%;
+	font-size: 20px;
+}

@@ -1,1 +1,1 @@
-Sitemap: http://temporizadoronline.online/sitemap.xml
+Sitemap: https://temporizadoronline.online/sitemap.xml

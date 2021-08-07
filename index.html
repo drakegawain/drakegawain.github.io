@@ -67,38 +67,45 @@
 
 		<h2>Lógica da programação</h2>
 
-		// cria o objeto que receberá os valores de segundos, minutos e horas
-		
+		<i>// cria o objeto que receberá os valores de segundos, minutos e horas</i>
+		<br> <font color="FF5733">
 		var timer_funct = {
-							seconds : 0,
-							minutes : 0,
-							hours : 0,
-						};
-		// cria a variavel que receberá o valor absoluto em segundos
-
-		var total_seconds = 0;
-		// cria a variavel 'timer' que recebe o valor digitado pelo usuário
-		let timer = document.getElementById('input').value;
-
-		//Aqui, acessa os valores do objeto anterior
+							<p>seconds : 0,
+							<p>minutes : 0,
+							<p>hours : 0,
+						};</font>
+		<br>
+		<i><p>//cria a variavel que receberá o valor absoluto em segundos</i>
+<br>
+		<p><font color="FF5733">var total_seconds = 0;</font>
+		<br>
+		<p>// cria a variavel 'timer' que recebe o valor digitado pelo usuário
+		<br>
+		<font color="FF5733"><p>let timer = document.getElementById('input').value;</font>
+<br>
+		<p><i>//Aqui, acessa os valores do objeto anterior
+		<br>
 		//usa a função parseInt para transformar uma string
+		<br>
 		//em um numero de base 10 (segundo parâmetro)
+		<br>
 		//usa a função substring para pegar uma posição exata da string
-		//que o usuário digitou
+		<br>
+		//que o usuário digitou</i>
+<br>
+		<p><font color="FF5733">timer_funct.hours = parseInt(timer.substring(0,2), 10);
+		<br>timer_funct.minutes = parseInt(timer.substring(3,5), 10);
+		<br>timer_funct.seconds = parseInt(timer.substring(6,8), 10);</font>
 
-		timer_funct.hours = parseInt(timer.substring(0,2), 10);
-		timer_funct.minutes = parseInt(timer.substring(3,5), 10);
-		timer_funct.seconds = parseInt(timer.substring(6,8), 10);
+		<i><br><p>//calcula o valor absoluto em segundos</i>
+		<p><font color="FF5733">total_seconds = (timer_funct.hours * 3600) + (timer_funct.minutes * 60) + timer_funct.seconds;</font>
 
-		//calcula o valor absoluto em segundos
-		total_seconds = (timer_funct.hours * 3600) + (timer_funct.minutes * 60) + timer_funct.seconds;
-
-		//diminui em 1 o valor total em segundos
+		<p><i>//diminui em 1 o valor total em segundos</i>
 		total_seconds--;
-		//pega o valor inteiro da divisão e atribui ao objeto criado anteriormente
-		timer_funct.hours = Math.trunc(total_seconds / 3600);
-		timer_funct.minutes = Math.trunc(total_seconds / 60);
-		timer_funct.seconds = total_seconds % 60;
+		<br><i>//pega o valor inteiro da divisão e atribui ao objeto criado anteriormente</i>
+		<p><font color="FF5733">timer_funct.hours = Math.trunc(total_seconds / 3600);
+		<br>timer_funct.minutes = Math.trunc(total_seconds / 60);
+		<br>timer_funct.seconds = total_seconds % 60;</font>
 		<h2>História</h2>
 		A história da medição do tempo remonta a 30.000 b.c. As primeiras soluções para medir o tempo usavam eventos naturais, como o movimento do sol e de outras estrelas no céu. Os pioneiros em medir o tempo usando relógio de sol foram os egípcios, por volta do ano 3.500b.c, e conforme a história da humanidade e da tecnologia avança, as formas de medir o tempo avançam para aumentar sua precisão.
 

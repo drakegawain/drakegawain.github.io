@@ -7,7 +7,8 @@
 		<meta property='og:description' content="Temporizador e cronômetro online com layout simples para o controle e organização.">
 		<meta property='og:url' content="https://temporizadoronline.online">
 		<title>
-			Cronômetro | Temporizador Online: Solução para controle de tempo
+			Cronômetro | Temporizador Online: Solução para controle de tempo, Silencioso
+			e Minimalista
 		</title>
 		<meta name="robots" content="index"> 
 		<meta name= description content="Temporizador e cronômetro online com layout simples para o controle e organização.">
@@ -54,12 +55,58 @@
 		<h2>Como usar?</h2>
 		Basta inserir o valor de tempo em horas:minutos:segundos e start.
 
+		<h2>Tem áudio?</h2>
+		Não, a ferramenta é silenciosa e informa que o tempo se esgotou com uma caixa de
+		diálogo.
+
+		<h1>Cronômetros</h1>
+		Cronômetros, ou stopwatch, são ferramentas usadas para marcar determinada quantidade de tempo.
+
+		<h2>Como é feito?</h2>
+		O temporizador online usa a linguagem javascript, nativa dos browsers atuais, para contar o tempo que o usuário determina.
+
+		<h2>Lógica da programação</h2>
+
+		// cria o objeto que receberá os valores de segundos, minutos e horas
+		
+		var timer_funct = {
+							seconds : 0,
+							minutes : 0,
+							hours : 0,
+						};
+		// cria a variavel que receberá o valor absoluto em segundos
+
+		var total_seconds = 0;
+		// cria a variavel 'timer' que recebe o valor digitado pelo usuário
+		let timer = document.getElementById('input').value;
+
+		//Aqui, acessa os valores do objeto anterior
+		//usa a função parseInt para transformar uma string
+		//em um numero de base 10 (segundo parâmetro)
+		//usa a função substring para pegar uma posição exata da string
+		//que o usuário digitou
+
+		timer_funct.hours = parseInt(timer.substring(0,2), 10);
+		timer_funct.minutes = parseInt(timer.substring(3,5), 10);
+		timer_funct.seconds = parseInt(timer.substring(6,8), 10);
+
+		//calcula o valor absoluto em segundos
+		total_seconds = (timer_funct.hours * 3600) + (timer_funct.minutes * 60) + timer_funct.seconds;
+
+		//diminui em 1 o valor total em segundos
+		total_seconds--;
+		//pega o valor inteiro da divisão e atribui ao objeto criado anteriormente
+		timer_funct.hours = Math.trunc(total_seconds / 3600);
+		timer_funct.minutes = Math.trunc(total_seconds / 60);
+		timer_funct.seconds = total_seconds % 60;
 		<h2>História</h2>
 		A história da medição do tempo remonta a 30.000 b.c. As primeiras soluções para medir o tempo usavam eventos naturais, como o movimento do sol e de outras estrelas no céu. Os pioneiros em medir o tempo usando relógio de sol foram os egípcios, por volta do ano 3.500b.c, e conforme a história da humanidade e da tecnologia avança, as formas de medir o tempo avançam para aumentar sua precisão.
 
-		<h1>Relógio Mecânico</h1>
+		<h2>Relógio Mecânico</h2>
 
 		O primeiro relógio mecânico foi inventado por Yi Xing, um monge budista chinês em 725a.c, mas foi após Galileu Galilei descobrir as regras do movimento pendular que a medição do tempo e os relógios mecânicos foram revolucionados. Hoje, a definição internacional de tempo é baseada no relógio atômico, que é considerado o relógio mais preciso do mundo, embora um novo relógio, do NIST (EUA), reinvidique o título.
+
+
 	</div>
 	<div class = 'botao'>
 			<div class = 'botao-1'>

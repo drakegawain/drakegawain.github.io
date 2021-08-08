@@ -33,34 +33,29 @@ body {
    text-decoration: none;
 }
 .botao{
+	width: 50%;
 	background-color: #252323;
-	height: 25%;
-	width: 100%;
+	position: relative;
+	left: 10%;
+	display: inline-flex;
 }
 .botao-1{
-	position: absolute;
-	left: 44.75%;
-	top: 80%;
+	position: relative;
+	right: 5%;
 }
 .botao-2{
-	position: absolute;
-	left: 30%;
-	top: 80%;
+	position: relative;
+	
 }
 .botao-3{
-	position: absolute;
-	left: 60%;
-	top: 80%;
+	position: relative;
+	left: 5%;
 }
 .input-field{
 	background-color: #252323;
-	width: 50%;
-	height: 50%;
 }
 .input-field-1{
-	position: absolute;
-	left: 37%;
-	top: 65%;
+	position: relative;
 }
 .form{
 	background-color: #252323;
@@ -68,19 +63,19 @@ body {
 }
 .display-cronometro{
 	background-color: #252323;
-	position: absolute;
-	left: 8%;
+	position: relative;
+	text-align: center;
+	top: 25%;
 }
 .cronometro-1{
 	background-color: #252323;
+	width: 100%;
+	top: 50%;
 }
 .timer-1{
 	font-family: arial;
 	font-size: 250px;
 	color: #bebebe;
-	position: absolute;
-	left: 310px;
-	top: -450px;
 }
 .input-01{
      padding: 30px;
@@ -96,23 +91,21 @@ body {
 }
 .textbox{
 	color: #bebebe;
-	position : absolute;
-	top: 70%;
-	left: 72%;
+	position : relative;
 }
 .textboxint{
 	text-align: justify;
 	position : relative;
 	border: hidden;
 	border-radius: 2px;
-	width: 95%;
+	
 }
 .content{
-	width: 40%;
+	width: 50%;
+	top: 50%;
+	left: 25%;
 	text-align: justify;
 	color: #bebebe;
-	position: absolute;
-	left: 5%;
-	top: 100%;
-	font-size: 20px;
+	position: relative;
+	font-size: 30px;
 }

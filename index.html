@@ -45,6 +45,37 @@
 		<p class = 'textboxint' id = 'infobox1' style = 'display : none'>The history of time measurement back's to 30.000 b.c. The first solutions to measure time used natural events, like the movement of sun and other stars in sky. The pioneers to measure time using sundial clock were the egyptian, around the year 3.500b.c, and as the story of humanity and technology moves foward, the ways to measure time advances to increase its precision.</p>
 		<p class= 'textboxint' id = 'infobox2' style = 'display: none'>The first mechanical clock was invented by Yi Xing, a chinese budist monk in 725a.c, but was after Galileu Galilei discover the rules of pendular movement that the time measurement and the mechanichal clocks were revolutionized. Today, the international definition of time is based on a atomic clock, witch is considered as the most accurate clock in the world, althought a new clock, from NIST (USA), reinvidicates the title.</p>
 	</div>
+	<div class= 'display-cronometro'>
+			<div class = 'cronometro-1'>
+				<span id = 'timer' class = 'timer-1'>00:00:00
+				</span>
+			</div>
+			<div class = 'script-cronometro'>
+				<script type="text/javascript" src = 'https://temporizadoronline.online/js/chrono.js'>		
+		</script>
+			</div>
+	<div class = 'input-field'>
+			<div class = 'form'>
+				<form action='startchrono' method='get' name = 'form-1'> 
+					<div class = 'input-field-1'>
+						<input class = 'input-01' placeholder="hour:minute:second" id = 'input' type="text" name="chrono-input">
+					</div>
+				</form>
+			</div>
+	</div>
+	<div class = 'botao'>
+			<div class = 'botao-1'>
+				<button	type = "button" id = 'botao1'	class = "thalesbutton">Start</button>
+			</div>
+			<div class = 'botao-2'>
+				<button	type = "button"	id = 'botao2'class = "thalesbutton">Stop</button>
+			</div>
+			<div class = 'botao-3'>
+				<button type = 'button' id = 'botao3'class= 'thalesbutton'>Clear</button>
+			</div>
+	</div>
+		
+	</div>	
 	<div class = 'content'>
 		<h2>O que é o Temporizador Online?</h2>
 
@@ -115,35 +146,5 @@
 
 
 	</div>
-	<div class = 'botao'>
-			<div class = 'botao-1'>
-				<button	type = "button" id = 'botao1'	class = "thalesbutton">Start</button>
-			</div>
-			<div class = 'botao-2'>
-				<button	type = "button"	id = 'botao2'class = "thalesbutton">Stop</button>
-			</div>
-			<div class = 'botao-3'>
-				<button type = 'button' id = 'botao3'class= 'thalesbutton'>Clear</button>
-			</div>
-	</div>
-	<div class = 'input-field'>
-			<div class = 'form'>
-				<form action='startchrono' method='get' name = 'form-1'> 
-					<div class = 'input-field-1'>
-						<input class = 'input-01' placeholder="hour:minute:second" id = 'input' type="text" name="chrono-input">
-					</div>
-				</form>
-			</div>
-	</div>
-	<div class= 'display-cronometro'>
-			<div class = 'cronometro-1'>
-				<span id = 'timer' class = 'timer-1'>00:00:00
-				</span>
-			</div>
-			<div class = 'script-cronometro'>
-				<script type="text/javascript" src = 'https://temporizadoronline.online/js/chrono.js'>		
-		</script>
-			</div>
-	</div>	
 </body>
 </html>

@@ -36,7 +36,8 @@ body {
 	width: 50%;
 	background-color: #252323;
 	position: relative;
-	left: 10%;
+	left: 35%;
+	top: 30%;
 	display: inline-flex;
 }
 .botao-1{
@@ -45,14 +46,16 @@ body {
 }
 .botao-2{
 	position: relative;
-	
 }
 .botao-3{
 	position: relative;
 	left: 5%;
 }
 .input-field{
-	background-color: #252323;
+	width: 100%;
+	position: relative;
+	top: 25%;
+	text-align: center;
 }
 .input-field-1{
 	position: relative;
@@ -101,10 +104,10 @@ body {
 	
 }
 .content{
-	width: 50%;
+	width: 80%;
 	top: 50%;
-	left: 25%;
-	text-align: justify;
+	left: 5%;
+	text-align: center;
 	color: #bebebe;
 	position: relative;
 	font-size: 30px;

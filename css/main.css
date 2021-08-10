@@ -7,12 +7,12 @@ body {
 .thalesbutton {
 	 -webkit-border-radius: 0;
    -moz-border-radius: 0;
-   border-radius: 0;
+   border-radius: 10px;
    color: #BEBEBE;
    font-family: Open Sans;
    font-size: 50px;
    font-weight: 100;
-   padding: 35px;
+   padding: 40px 100px 40px 100px;
    background-color: #464A4E;
    border: solid #C6CACF 1px;
    text-decoration: none;
@@ -44,7 +44,7 @@ body {
 .botao-2{
 	position: absolute;
 	top: 0%;
-	left: 42%;
+	left: 40%;
 }
 .botao-3{
 	position: absolute;

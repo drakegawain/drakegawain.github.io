@@ -112,3 +112,13 @@ body {
 	position: relative;
 	font-size: 30px;
 }
+.preset{
+	width: 100%;
+	position: relative;
+	top: 15%;
+}
+.preset-1-min{
+	position: absolute;
+	left: 20%;
+	font-size: 30px;
+}

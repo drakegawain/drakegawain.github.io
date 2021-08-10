@@ -54,7 +54,7 @@ body {
 .input-field{
 	width: 100%;
 	position: relative;
-	top: 25%;
+	top: 15%;
 	text-align: center;
 }
 .input-field-1{
@@ -68,7 +68,7 @@ body {
 	background-color: #252323;
 	position: relative;
 	text-align: center;
-	top: 25%;
+	top: 10%;
 }
 .cronometro-1{
 	background-color: #252323;
@@ -105,7 +105,7 @@ body {
 }
 .content{
 	width: 80%;
-	top: 70%;
+	top: 50%;
 	left: 5%;
 	text-align: center;
 	color: #bebebe;

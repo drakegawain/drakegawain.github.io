@@ -8,8 +8,12 @@
 					document.getElementById('botao3').addEventListener('click', () => {
 						restartchrono()
 					}, true);
+					document.getElementById('áudio').addEventListener('change', () => {
+						playAudio()
+					}, true);
 					// declara as variaveis que checam se o input esta em branco
 					// ou se o usuario pediu para parar o cronometro
+					var is_audio = false;
 					var is_stop = false;
 					var is_blank = false;
 					const timer_real_zero = 0;
@@ -17,6 +21,14 @@
 					var total_seconds = 0;
 					// declara as funcoes que reiniciam, param e começam
 					// o cronometro
+					function playAudio(){
+						if (is_audio===false) {
+						 is_audio = true;	
+						}
+						else {
+							is_audio = false;
+						} 
+					}
 					 function restartchrono(){
 					 	let timer = document.getElementById('input').value;
 					 	if (timer === ''){
@@ -133,9 +145,21 @@
 								document.location.reload(true);
 							}
 							if (total_seconds === 0){
-								alert("Time's up");
-								clearInterval(interval);
-								document.location.reload(true);
+								stopchrono();
+								console.log(is_audio);
+								if (is_audio === true){
+									console.log('pass')
+									function playAudio2(){
+										document.getElementById('audio_id').play();
+									}
+									playAudio2();
+								}
+
+								setTimeout(function(){
+									alert("Time's up");
+									clearInterval(interval);
+									document.location.reload(true);
+								}, 5000);
 							}
 							// logica do cronometro
 							total_seconds--;

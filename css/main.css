@@ -115,7 +115,7 @@ body {
 .preset{
 	width: 100%;
 	position: relative;
-	top: 15%;
+	top: 13%;
 }
 .preset-1-min{
 	position: absolute;
@@ -125,4 +125,53 @@ body {
 .PRESET-1-hour{
 	position: absolute;
 	top: 100%;
+}
+.preset_2{
+	width: 100%;
+	position: relative;
+	top: 13%;
+	font-size: 30px;
+}
+.preset-5min{
+	position: absolute;
+	left: 40%;
+}
+.preset-10min{
+	position: absolute;
+	left: 40%;
+	top: 30px;
+}
+.preset-20min{
+	position: absolute;
+	left: 40%;
+	top: 60px;
+}
+.preset_3{
+	width: 100%;
+	position: relative;
+	top: 13%;
+	font-size: 30px;
+}
+.preset-40min{
+	position: absolute;
+	left: 60%;
+}
+.preset-50min{
+	position: absolute;
+	left: 60%;
+	top: 30px;
+}
+.preset-2horas{
+	position: absolute;
+	left: 60%;
+	top: 60px;
+}
+.audio{
+	position:relative;
+	top: 13%;
+	color: #bebebe;
+}
+.alarme{
+	position: absolute;
+	left: 80%;
 }

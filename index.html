@@ -38,6 +38,9 @@
 		<script type="text/javascript" src = 'https://temporizadoronline.online/js/jquery-3.6.0.js'></script>
 		<link rel='stylesheet' type='text/css' href='https://temporizadoronline.online/css/main.css'>
 		<link rel='canonical' href='https://temporizadoronline.online'/>
+		<audio id='audio_id'>
+			<source src="./mp3/Alarme.mp3" type="audio/mpeg">
+		</audio>
 	</head>
 <body>
 	<div class = 'textbox' id = 'infobox' style = 'display: none'>
@@ -72,6 +75,34 @@
 		</div>
 	</div>
 </div>
+	<div class = 'preset_2'>
+		<div class="preset-5min">
+			<a href="https://temporizadoronline.online/5">5 MINUTOS</a>
+		</div>
+		<div class="preset-10min">
+			<a href="https://temporizadoronline.online/10">10 MINUTOS</a>
+		</div>
+		<div class="preset-20min">
+			<a href="https://temporizadoronline.online/20">20 MINUTOS</a>
+		</div>
+	</div>
+	<div class="preset_3">
+		<div class="preset-40min">
+			<a href="https://temporizadoronline.online/40">40 MINUTOS</a>
+		</div>
+		<div class="preset-50min">
+			<a href="https://temporizadoronline.online/50">50 MINUTOS</a>
+		</div>
+		<div class="preset-2horas">
+			<a href="https://temporizadoronline.online/2horas">2 HORAS</a>
+		</div>
+	</div>
+	<div class="audio">
+		<div class="alarme">
+		<input type="checkbox" id = 'áudio'name="áudio">
+		<label for="áudio">Alarme</label>
+		</div>
+	</div>
 	<div class = 'botao' type = 'button'>
 			<div class = 'botao-1'>
 				<button	type = "button" id = 'botao1'	class = "thalesbutton">Start</button>

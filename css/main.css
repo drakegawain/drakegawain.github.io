@@ -10,10 +10,10 @@ body {
    border-radius: 10px;
    color: #BEBEBE;
    font-family: Open Sans;
-   font-size: 50px;
+   font-size: 20px;
    font-weight: 100;
-   padding: 40px 100px 40px 100px;
-   background-color: #464A4E;
+   padding: 20px 50px 20px 50px;
+   background-color: #252323;
    border: solid #C6CACF 1px;
    text-decoration: none;
    display: inline-block;
@@ -33,23 +33,22 @@ body {
    text-decoration: none;
 }
 .botao{
-	text-align: center;
-	position: relative;
-	top: 30%;
+width: 100vw;
+height: 43vh;
+background: #252323;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
 }
 .botao-1{
-	right: 30%;
-	position: relative;
+ margin-right: 10px;
 }
 .botao-2{
-	position: absolute;
-	top: 0%;
-	left: 40%;
+ margin-right: 10px;
 }
 .botao-3{
-	position: absolute;
-	top: 0%;
-	left: 70%;
+ 
 }
 .input-field{
 	width: 100%;
@@ -104,6 +103,7 @@ body {
 	
 }
 .content{
+	display: none;
 	width: 80%;
 	top: 120%;
 	left: 5%;
@@ -113,6 +113,7 @@ body {
 	font-size: 40px;
 }
 .preset{
+	display: none;
 	width: 100%;
 	position: relative;
 	top: 13%;
@@ -127,6 +128,7 @@ body {
 	top: 100%;
 }
 .preset_2{
+	display: none;
 	width: 100%;
 	position: relative;
 	top: 13%;
@@ -147,6 +149,7 @@ body {
 	top: 60px;
 }
 .preset_3{
+	display: none;
 	width: 100%;
 	position: relative;
 	top: 13%;
@@ -173,5 +176,5 @@ body {
 }
 .alarme{
 	position: absolute;
-	left: 80%;
+	left: 75%;
 }

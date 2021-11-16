@@ -43,7 +43,69 @@
 					 	is_stop = true;	
 						return  is_stop;
 					}
+					function chrono_validation(){
+						//valida o input do usuário
+						//se 1 digito --> segundo
+						// 2 digitos --> 2 digitos segundos
+						// 3 digitos --> digito mais a esquerda minutos
+						
+						let timer_validation = document.getElementById('input').value;
+						console.log(timer_validation);
+						if (timer_validation.length < 8){ 
+						let timer_XYZ = 'AB:CD:EF';
+						let result = '00:00:00';
+						let total_seconds_validation = timer_validation;
+						var clock = {
+							seconds : 0,
+							minutes : 0,
+							hours : 0,
+						}
+						if (timer_validation.length == 1) {
+							timer_XYZ = '00:00:0F';
+							result = timer_XYZ.replace("F", timer_validation)
+						}
+						if (timer_validation.length == 2) {
+							timer_XYZ = '00:00:EF';
+							result = timer_XYZ.replace("EF", timer_validation)
+						}
+						if (timer_validation.length == 3) {
+							timer_XYZ = '00:0D:EF';
+							clock.minutes = timer_validation.charAt(0); 
+							clock.seconds = timer_validation.charAt(1) + timer_validation.charAt(2);
+							result = timer_XYZ.replace("EF", clock.seconds);
+							result = result.replace("D", clock.minutes);
+													}
+						if (timer_validation.length == 4) {
+							 timer_XYZ = '00:CD:EF';
+							clock.minutes = timer_validation.charAt(0) + timer_validation.charAt(1); 
+							clock.seconds = timer_validation.charAt(2) + timer_validation.charAt(3);
+							result = timer_XYZ.replace("EF", clock.seconds);
+							result = result.replace("CD", clock.minutes);
+						}
+						if (timer_validation.length == 5) {
+							timer_XYZ = '0B:CD:EF';
+							clock.hours = timer_validation.charAt(0); 
+							clock.minutes = timer_validation.charAt(1) + timer_validation.charAt(2);
+							clock.seconds = timer_validation.charAt(3) + timer_validation.charAt(4);
+							result = timer_XYZ.replace("EF", clock.seconds);
+							result = result.replace("CD", clock.minutes);
+							result = result.replace("B", clock.hours);
+						}
+						if (timer_validation.length == 6){
+							timer_XYZ = 'AB:CD:EF';
+							clock.hours = timer_validation.charAt(0) + timer_validation.charAt(1); 
+							clock.minutes = timer_validation.charAt(2) + timer_validation.charAt(3);
+							clock.seconds = timer_validation.charAt(4) + timer_validation.charAt(5);
+							result = timer_XYZ.replace("EF", clock.seconds);
+							result = result.replace("CD", clock.minutes);
+							result = result.replace("AB", clock.hours);
+						}
+						//fazer para lenght 4, 5 e 6
+						document.getElementById('input').value = result;
+					}
+				}
 					function startchrono(){
+						chrono_validation();
 						// pega o valor do input
 						let timer = document.getElementById('input').value;
 						// seleciona o display do cronometro

@@ -221,7 +221,7 @@
 									alert("Time's up");
 									clearInterval(interval);
 									document.location.reload(true);
-								}, 5000);
+								}, 50);
 							}
 							// logica do cronometro
 							total_seconds--;

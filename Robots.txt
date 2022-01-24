@@ -1,1 +1,11 @@
+User-agent: *
+Allow: /1
+Allow: /1hora
+Allow: /2horas
+Allow: /5
+Allow: /10
+Allow: /20
+Allow: /30
+Allow: /40
+Allow: /50
 Sitemap: https://temporizadoronline.online/Sitemap.xml
